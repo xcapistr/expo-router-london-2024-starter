@@ -1,8 +1,6 @@
-import { Stack, Redirect } from "expo-router";
+import { Stack } from "expo-router";
 import React from "react";
-import { useAuth } from "@/data/hooks/useAuth";
 import colors from "@/constants/colors";
-import { Platform } from "react-native";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -17,12 +15,6 @@ export const unstable_settings = {
 // SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
-  const { authToken } = useAuth();
-
-  if (!authToken) {
-    return <Redirect href="/sign-in" />;
-  }
-
   return (
     <Stack>
       <Stack.Screen
