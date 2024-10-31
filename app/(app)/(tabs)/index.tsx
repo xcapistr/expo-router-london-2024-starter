@@ -23,7 +23,7 @@ export default function WhatsNewScreen() {
         </View>
       }
       renderItem={({ item }) => (
-        <Artwork department={item.department} artwork={item.randomWork} />
+        <Artwork exhibitName={item.department} artwork={item.randomWork} />
       )}
     />
   );
