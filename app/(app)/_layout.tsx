@@ -24,11 +24,7 @@ export default function Layout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerBackTitleVisible: false,
-      }}
-    >
+    <Stack>
       <Stack.Screen
         name="(tabs)"
         options={{
@@ -39,15 +35,6 @@ export default function Layout() {
       <Stack.Screen
         name="works/[id]/index"
         options={{
-          ...Platform.select({
-            web: {
-              presentation: "transparentModal",
-              animation: "fade",
-            },
-            default: {
-              presentation: "modal",
-            },
-          }),
           headerShown: false,
         }}
       />
