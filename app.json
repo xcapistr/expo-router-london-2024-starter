@@ -3,6 +3,7 @@
     "name": "Art Museum!",
     "slug": "art-thing-2",
     "version": "1.0.0",
+    "newArchEnabled": true,
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
