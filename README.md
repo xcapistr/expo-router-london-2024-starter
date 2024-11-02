@@ -1,96 +1,44 @@
-# Art Thing 2
-A demo of Expo Router v3 with API Routes using the Cleveland Museum of Art Open Access API
+# React Native London Conf 2024 Workshop: Expo Router
+Workshop starter template for the Expo Router workshop at React Native London Conf 2024.
 
-App concept: you download this thing before visiting the museum to preview the art you'll see there and "fav" the works you would like to scope out when you visit.
-## Stuff it does
-- Lists departments inside the museum
-- List all the works on display at the museum / where the API returns a photo for each department.
-- Reads and writes "favorite" works.
-- Shows all your favorited works on the "Favorites" tab.
-- Shows directions and hours for the museum. If you visit the museum, let me know and I'll try to join you!
-## Stuff inside
-- The works of art themselves are pulled from the [Cleveland Museum of Art Open Access API](https://openaccess-api.clevelandart.org/), retrieved using TanStack query. You could use the API directly, but for reliability's sake, it's pulling from local files
-- The favorites functionality is done with Expo Router API routes. Look for the +api files, one to get/ set claps for individual works, and another to read them all back for the Favorites tab. It's all going to a local data store (really just a text file) to keep things simple and self-contained.
-- Styling via Nativewind v4
-## How to run
+## How to use this repo
 
-### Web
-1. Run `npm install`
-2. Run `npx expo start`
+1. Fork this repo. You'll start working right on `main`.
+2. Grab the [lessons from here](https://github.com/keith-kurak/expo-router-london-2024-lessons) (clone it, open it in your browser, whatever works for you).
+2. Start at the first module by opening up the file starting with "01-".
+3. Do the rest of the modules in order.
 
-### Native
-1. Run `npm install`
-2. Make a development build (e.g., `eas init; eas build --profile development`) or build locally (e.g., `npx expo run:ios`).
-3. Run `npx expo start`
+## Prerequisites
+- Node LTS version (18+)
+- Visual Studio Code
+- Expo Go on your device or simulator
+- Web browser
 
-## Other fun stuff
-### Local data mode
-I'm using this app as a bit of a sandbox to demo other features, some of which require making a standalone build, and I don't really want to deploy the simple above API _yet_ (it would need stuff like... user segmentation and security, y'know!). So, I wanted a 100% offline version. You can turn that by setting the environment variable `EXPO_PUBLIC_USE_LOCAL_DATA=true`.
+You actually don't need a Mac for this workshop. You don't need to do any native builds for the main workshop exercises (maybe useful for 1 or 2 side quests)
 
-See the **data/hooks** folder for how the switching works. One cool thing about Tanstack Query is that you can quite easily use anything for the backing store- it doesn't have to be a server API. So, nothing changes with the screens or the data hooks interface itself, it's all internal to the Tanstack Query calls. Even invalidating data and forcing refresh of other screens works just fine.
+## Test your setup before the workshop
 
-To run in local data mode, run `npm start-local`.
+Do these steps to ensure you'll be ready to go when the workshop starts:
 
-## Pulling the data
-The data from the artwork API is pulled locally in order to make this into a workable mostly-offline workshop demo, and work around CORS issues prior to introducing API routes (using an API route as a proxy would also work around the curiously-intermittant CORS issues with this API).
+1. Fork and clone this repo
 
-The request I use is `https://openaccess-api.clevelandart.org/api/artworks?has_image=1&currently_on_view=1`, which gets works with online images that are currently on display at the museum.
+2. Open the project in Visual Studio Code and install the recommended extensions.
 
-I then run `npm strip-unused-fields-from-api-data` to remove unused fields and optionally limit the artwork to a smaller number. This is done in order to make live reloading for testing more quickly. The API itself also has the ability to limit fields, but I get "Internal Server Error" when I list the `description` field specifically in the API.
+3. Restore dependencies with
 
-If I was really embedding the artwork into the app, I would treat the JSON files as assets, so they wouldn't get bundled. They would load quite quickly in this case, even with zero filtering. If I was really using the API online, it wouldn't be difficult to transition to this- simply replace the offline access in the **hooks** with fetch requests.
+```npm install```
 
-The same data is also provided in a Github repo (https://github.com/ClevelandMuseumArt/openaccess), so I think they're generally OK with it being used in this way.
+4. Run `npx expo start`
 
-## Keith's contact info
-[Bird app](https://twitter.com/llamaluvr)
-[LinkedIn](https://www.linkedin.com/in/keith-kurak/)
-[Discord](https://chat.expo.dev)
+5. Press `w` to open the app in your web browser.
 
-## Errata
+6. Scan the QR code with your phone to test the app in Expo Go.
 
-### Caveat
-Not sure how bad it is that I'm going after Router canary to get headless tabs but otherwise using SDK 51 (should be moot soon)
+## Other resources
 
-### Headless navigators
+TBD
 
-#### I couldn't get ScrollViews in tabs to scroll without this patch (content was just expanding past screen bounds)
-FlatList worked, tho
-
-#### It seems like I can't encapsulate anything under `Tabs` in components.
-I get `Couldn't find any screens for the navigator. Have you defined any screens as its children?`.
-
-So my responsive styling looks pretty clumsy, though there's probably a more nativewind way I could do this
-
-#### Remind me how I can use the tab triggers (I think) to do double-tap to scroll up?
-
-#### Or, how could I return to index on moving away from departments? (very optional)
-
-### Shared routes
-I think as-is, works route is probably OK, but if I wanted to make it part of a nested stack in each tab, how would I do that?
-
-### Back button behavior
-Home -> Department => back navigation takes me back to Departments (not really wanted)
-
-But browser back takes me back to Home (more wanted)
-
-### Responsiveness
-
-What's the preferred way to access responsive styling variables imparatively? I see some refereces to hooks that I'm not sure they work in RN. Ideally, I grab a variable synced to Nativewind
-
-### Auth
-I think I'll do the full-gated auth experience for the shorter workshop. It's easy and important.
-
-But I'd like to understand the partially-gated auth experience in your example
-
-My assumption:
-- Use a top-level transparent modal
-- Add redirects on invalid routes (e.g., Profile in my case)
-- Otherwise, use conditionals based on auth status as needed.
-
-### Etc.
-- Feels like I'm having to cast as `Href` everywhere, not sure why
-- How to address `works/[id]` in _layout (vs in screen)
-
-### Totally random things
-- I don't get why the tabs are allowed to be groups here: https://docs.expo.dev/router/advanced/shared-routes/ 
+## Connect
+- [Twitter](https://twitter.com/home)
+- [Linked In](https://www.linkedin.com/in/keith-kurak/)
+- [Expo Discord](https://chat.expo.dev)
