@@ -12,29 +12,13 @@ export type TabButtonProps = TabTriggerSlotProps & {
 
 export const TabButton = forwardRef(function TabButtonComponent(
   { icon, children, isFocused, ...props }: TabButtonProps,
-  ref: Ref<View>,
+  ref: Ref<View>
 ) {
   return (
-    <Pressable
-      ref={ref}
-      {...props}
-      className={isFocused ? " sm:border-b-tint sm:border-b-2" : ""}
-    >
+    <Pressable ref={ref} {...props}>
       <View className="justify-between items-center gap-y-1 px-2 flex-col">
-        <MaterialIcons
-          color={isFocused ? colors.tint : colors.black}
-          className="sm:hidden"
-          name={icon}
-          size={24}
-        />
-        <Text
-          className={
-            "text-sm sm:text-lg" +
-            (isFocused ? " color-tint sm:color-black" : "")
-          }
-        >
-          {children}
-        </Text>
+        <MaterialIcons name={icon} size={24} />
+        <Text className={"text-md"}>{children}</Text>
       </View>
     </Pressable>
   );
