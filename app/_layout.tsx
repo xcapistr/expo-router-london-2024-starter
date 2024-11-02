@@ -10,7 +10,6 @@ import "@/global.css";
 // component interops for nativewind - just need these once
 cssInterop(Image, { className: "style" });
 
-// TODO: Auth & Redirect
 export default function App() {
   const queryClient = new QueryClient();
 
