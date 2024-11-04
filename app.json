@@ -55,7 +55,9 @@
       "typedRoutes": true
     },
     "extra": {
-  
+      "eas": {
+        "projectId": "f578a103-a564-4d3b-9bc5-58c22ee9f467"
+      }
     },
     "owner": "keith-kurak"
   }
