@@ -10,7 +10,6 @@ export default function TabLayout() {
       sceneContainerStyle={{ backgroundColor: colors.white }}
       screenOptions={{
         headerShown: false,
-        lazy: false,
       }}
     >
       <Tabs.Screen
