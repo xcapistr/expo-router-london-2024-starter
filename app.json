@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Art Museum!",
-    "slug": "art-thing-2",
+    "slug": "expo-router-london-2024-starter",
     "version": "1.0.0",
     "newArchEnabled": true,
     "orientation": "portrait",
@@ -17,14 +17,14 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.keithkurak.artthing2"
+      "bundleIdentifier": "com.expo.london2024"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.keithkurak.artthing2"
+      "package": "com.expo.london2024"
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +35,7 @@
       [
         "expo-router",
         {
-          "origin": "https://artthing2.dev/"
+          "origin": "https://artthing3.dev/"
         }
       ],
       [
@@ -55,12 +55,7 @@
       "typedRoutes": true
     },
     "extra": {
-      "router": {
-        "origin": "https://artthing2.dev/"
-      },
-      "eas": {
-        "projectId": "f6b73ba6-d0c7-4cb1-b789-d949aba9a851"
-      }
+  
     },
     "owner": "keith-kurak"
   }
