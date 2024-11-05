@@ -13,7 +13,7 @@ class Database {
 
   constructor(userId?: string | undefined | null) {
     this.userId = userId || DEFAULT_USER_ID;
-    // little hack to get around when we're trying to pass the auth token header before it exists
+    // little hack to get around when we're trying to pass the auth token header before it exists.
     if (userId === "undefined") {
       this.userId = DEFAULT_USER_ID;
     }
