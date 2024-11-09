@@ -7,6 +7,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 export function useMediaQuery() {
   const { width } = useWindowDimensions();
   return {
+    isMobile: width < parseInt(fullConfig.theme.screens.sm, 10),
     isSm: width >= parseInt(fullConfig.theme.screens.sm, 10),
     isMd: width >= parseInt(fullConfig.theme.screens.md, 10),
     isLg: width >= parseInt(fullConfig.theme.screens.lg, 10),
