@@ -38,27 +38,13 @@
           "origin": "https://artthing3.dev/"
         }
       ],
-      [
-        "expo-quick-actions",
-        {
-          "androidIcons": {
-            "help_icon": {
-              "foregroundImage": "./assets/images/adaptive-icon-help.png",
-              "backgroundColor": "#29cfc1"
-            }
-          }
-        }
-      ],
       "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
     },
-    "extra": {
-      "eas": {
-        "projectId": "f578a103-a564-4d3b-9bc5-58c22ee9f467"
-      }
+    "runtimeVersion": {
+      "policy": "appVersion"
     },
-    "owner": "keith-kurak"
   }
 }
