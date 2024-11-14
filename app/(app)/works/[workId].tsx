@@ -15,6 +15,7 @@ export default function WorkScreen() {
   const { workId } = useLocalSearchParams<{
     workId: string
   }>()
+
   const insets = useSafeAreaInsets()
 
   // query art API for the work
