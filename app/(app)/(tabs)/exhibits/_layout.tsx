@@ -1,6 +1,11 @@
-import React from "react";
-import { Stack } from "expo-router";
-import colors from "@/constants/colors";
+import React from 'react'
+import { Stack } from 'expo-router'
+import colors from '@/constants/colors'
+
+export const unstable_settings = {
+  // Ensure any route can link back to `/`
+  initialRouteName: 'index'
+}
 
 export default function StackLayout() {
   return (
@@ -8,10 +13,10 @@ export default function StackLayout() {
       <Stack.Screen
         name="index"
         options={{
-          title: "Exhibits",
-          headerShown: false,
+          title: 'Exhibits',
+          headerShown: false
         }}
       />
     </Stack>
-  );
+  )
 }

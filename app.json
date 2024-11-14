@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Art Museum!",
+    "name": "Art Museum 2!",
     "slug": "expo-router-london-2024-starter",
     "version": "1.0.0",
     "newArchEnabled": true,
@@ -13,18 +13,16 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "com.expo.london2024"
+      "bundleIdentifier": "com.expo.london2024.xcapi"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.expo.london2024"
+      "package": "com.expo.london2024.xcapi"
     },
     "web": {
       "bundler": "metro",
@@ -42,6 +40,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "050dd2c8-230c-4513-94e3-756fa2e1d3c3"
+      }
     }
   }
 }
