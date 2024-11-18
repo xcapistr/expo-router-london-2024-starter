@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { TabButton } from '@/components/TabButton'
 import { Image } from 'expo-image'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useMediaQuery } from '@/constants/useMediaQuery'
 
 const tabs = (
   <TabList
@@ -20,10 +21,10 @@ const tabs = (
       'bg-white'
     )}
   >
-    <TabTrigger name="index" href="/" asChild>
+    <TabTrigger name="index" href="/(home)" asChild>
       <TabButton icon="museum">Home</TabButton>
     </TabTrigger>
-    <TabTrigger name="exhibits" asChild href="/exhibits" reset="always">
+    <TabTrigger name="exhibits" asChild href="/(exhibits)" reset="always">
       <TabButton icon="palette">Exhibits</TabButton>
     </TabTrigger>
     <TabTrigger name="visit" asChild href="/visit">
@@ -36,24 +37,26 @@ const tabs = (
 )
 
 export default function TabLayout() {
+  const { isSm } = useMediaQuery()
   return (
     <View className="flex-1">
       <Tabs className="flex-1 sm:flex-col-reverse">
         <View className="flex-1">
           <TabSlot />
         </View>
-        <LinearGradient
-          pointerEvents="none"
-          // Background Linear Gradient
-          colors={['rgba(255,255,255,0)', 'rgba(255,255,255,1)']}
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            height: 200
-          }}
-        />
+        {!isSm && (
+          <LinearGradient
+            pointerEvents="none"
+            colors={['rgba(255,255,255,0)', 'rgba(255,255,255,1)']}
+            style={{
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: 200
+            }}
+          />
+        )}
         {tabs}
       </Tabs>
       <View
